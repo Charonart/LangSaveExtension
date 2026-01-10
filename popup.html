@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LangSave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">LangSave</h1>
+    </header>
+
+    <div class="search-container">
+      <input 
+        type="text" 
+        id="searchInput" 
+        class="search-input" 
+        placeholder="Search words..."
+        autocomplete="off"
+      >
+    </div>
+
+    <div class="selection-controls" id="selectionControls">
+      <div class="selection-controls-left">
+        <label class="select-all-label">
+          <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox">
+          <span>Select all</span>
+        </label>
+      </div>
+      <div class="selection-controls-right">
+        <button id="collapseAllBtn" class="btn-small btn-text">Collapse All</button>
+        <button id="expandAllBtn" class="btn-small btn-text">Expand All</button>
+      </div>
+    </div>
+
+    <div class="words-container" id="wordsContainer">
+      <div class="empty-state" id="emptyState">
+        <p class="empty-message">No words saved yet.</p>
+        <p class="empty-hint">Highlight a word and right-click to save it, or use Alt+S</p>
+      </div>
+      <ul class="word-list" id="wordList"></ul>
+    </div>
+
+    <div class="actions">
+      <button id="exportBtn" class="btn btn-primary">Export Selected</button>
+      <button id="copyAllBtn" class="btn btn-secondary">Copy All</button>
+      <button id="deleteSelectedBtn" class="btn btn-danger btn-hidden">Delete Selected</button>
+      <button id="clearAllBtn" class="btn btn-danger">Clear All</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+
