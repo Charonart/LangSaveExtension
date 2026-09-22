@@ -10,101 +10,101 @@
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License MIT" />
 </p>
 
-> **Effortlessly capture, learn, and retain new English vocabulary directly while reading web articles, documentation, and PDF documents.**  
-> Automatically fetches IPA phonetics, definitions, and exports seamlessly to **Anki Flashcards** and CSV.
+> **Effortlessly capture, learn, and retain new English vocabulary directly while reading web articles, technical documentation, and PDF documents.**  
+> Automatically fetches IPA phonetics, definitions, and exports seamlessly to **Anki Flashcards** and spreadsheet formats.
 
 ---
 
-## 📌 Table of Contents / Mục Lục
+## 📌 Table of Contents
 
-- [The Problem & The Solution / Vấn Đề & Giải Pháp](#-the-problem--the-solution)
-- [Key Features / Tính Năng Nổi Bật](#-key-features--tính-năng-nổi-bật)
-- [Architecture & Tech Stack / Kiến Trúc Kỹ Thuật](#-architecture--tech-stack)
-- [Installation Guide / Hướng Dẫn Cài Đặt](#-installation-guide--hướng-dẫn-cài-đặt)
-- [How to Use / Hướng Dẫn Sử Dụng](#-how-to-use--hướng-dẫn-sử-dụng)
-- [Exporting to Anki / Hướng Dẫn Xuất Thẻ Anki](#-exporting-to-anki--hướng-dẫn-xuất-thẻ-anki)
-- [Privacy & Permissions / Quyền Riêng Tư & Bảo Mật](#-privacy--permissions)
-- [Roadmap / Lộ Trình Phát Triển](#-roadmap--lộ-trình-phát-triển)
-- [Author & Links / Tác Giả & Liên Hệ](#-author--links--tác-giả--liên-hệ)
+- [The Problem & The Solution](#-the-problem--the-solution)
+- [Key Features](#-key-features)
+- [Architecture & Technical Implementation](#-architecture--technical-implementation)
+- [Installation Guide (Developer Mode)](#-installation-guide-developer-mode)
+- [How to Use](#-how-to-use)
+- [Exporting to Anki Flashcards](#-exporting-to-anki-flashcards)
+- [Privacy & Security](#-privacy--security)
+- [Roadmap](#-roadmap)
+- [Author & Contact](#-author--contact)
 
 ---
 
 ## 💡 The Problem & The Solution
 
-### The Friction (Vấn đề người học gặp phải)
-Khi đọc báo tiếng Anh (BBC, The Guardian, Medium) hoặc tài liệu chuyên ngành PDF:
-1. **Mất tập trung (Context Switching)**: Gặp từ mới phải copy mở sang tab Google Translate hoặc từ điển làm đứt mạch đọc và luồng suy nghĩ.
-2. **Nhanh quên (Zero Retention)**: Tra nghĩa xong nhưng không lưu lại, vài ngày sau gặp lại từ đó vẫn phải tra lại từ đầu.
-3. **Mất thời gian tạo Flashcard**: Cuối tuần muốn học lại phải thủ công nhập từng từ, từng nghĩa vào Anki hoặc Quizlet rất tốn thời gian.
+### The Friction (The Reading Dilemma)
+When reading online articles (BBC, The Guardian, Medium, Substack) or academic/technical PDFs:
+1. **Context Switching & Disrupted Flow**: Encountering an unfamiliar word forces you to open a new tab for Google Translate or a dictionary, breaking your concentration and reading momentum.
+2. **Zero Retention**: You look up a definition, understand it in the moment, but forget it within days because you didn't save it anywhere.
+3. **Tedious Flashcard Creation**: Manually copy-pasting words, phonetics, and definitions into Anki or Quizlet at the end of the week is repetitive and time-consuming.
 
-### The LangSave Solution (Giải pháp tối ưu)
-**LangSave loại bỏ hoàn toàn mọi thao tác thừa:**
-- Chỉ cần bôi đen từ và nhấn **`Alt + S`** (hoặc chuột phải chọn *"Save to LangSave"*).
-- Tiện ích tự động gọi từ điển lấy **phiên âm IPA** và **định nghĩa Anh-Anh** ngay lập tức trong nền.
-- Hoạt động mượt mà trên cả trang web thông thường lẫn **tài liệu PDF (Chrome PDF Viewer)**.
-- Cuối tuần chỉ cần bấm **`Export Selected (CSV)`** và nhập thẳng 1-click vào **Anki** để ôn luyện theo phương pháp Lặp lại ngắt quãng (Spaced Repetition).
+### The LangSave Solution
+**LangSave eliminates all unnecessary friction:**
+- Simply highlight any word and press **`Alt + S`** (or right-click and select *"Save to LangSave"*).
+- The extension runs in the background to fetch **IPA phonetics** and **concise English definitions** via the Free Dictionary API.
+- Works natively across regular web pages as well as **Chrome's built-in PDF Viewer**.
+- Review words anytime in a clean popup, add your personal notes, and click **`Export Selected`** to generate an Anki-ready CSV file formatted with UTF-8 BOM.
 
 ---
 
-## ✨ Key Features / Tính Năng Nổi Bật
+## ✨ Key Features
 
 ### ⚡ 1. 1-Click Instant Capture (`Alt + S`)
-- Lưu từ siêu tốc chỉ với phím tắt mặc định **`Alt + S`** hoặc click chuột phải qua Context Menu.
-- Thông báo Chrome Native Toast thông báo trạng thái lưu từ tức thì mà không cần mở popup.
+- Save any word in less than a second using the default keyboard shortcut **`Alt + S`** or the right-click context menu.
+- A native Chrome desktop notification confirms the word is saved, so you never need to leave your reading tab.
 
-### 📚 2. Automatic IPA Phonetics & Definitions
-- Tự động gọi **Free Dictionary API** để phân tích từ gốc, lấy phiên âm chuẩn quốc tế (`[fəˈnɛtɪk]`) và định nghĩa giải thích ngắn gọn, xúc tích.
-- Tự động loại bỏ dấu chấm, dấu phẩy thừa ở rìa từ bôi đen để giữ dữ liệu luôn chuẩn xác.
+### 📚 2. Automated IPA Phonetics & Lexical Definitions
+- Automatically queries the **Free Dictionary API** to retrieve accurate international phonetics (`[fəˈnɛtɪk]`) and clean dictionary meanings.
+- Automatically sanitizes selected text by trimming punctuation, quotation marks, and extraneous whitespace.
 
-### 📄 3. Native PDF Viewer Support (Tính Năng Độc Đáo)
-- Hầu hết các extension tra từ khác đều bị vô hiệu hóa trên trang xem PDF của trình duyệt.
-- LangSave được trang bị bộ trích xuất thông minh: đào sâu vào cấu trúc **PDF.js TextLayer** và cơ chế **Clipboard Fallback** tự động, đảm bảo bạn lưu từ dễ dàng ngay cả khi đang đọc sách Ebook, Paper nghiên cứu hay tài liệu PDF học tập.
+### 📄 3. Native Chrome PDF Viewer Support
+- Most dictionary extensions fail inside Chrome's sandboxed PDF viewer (`chrome-extension://...` or `file://...pdf`).
+- LangSave implements a specialized DOM text-layer traversal targeting **PDF.js TextLayers** with an intelligent **Clipboard Fallback**, ensuring you can save vocabulary even when reading research papers, eBooks, and whitepapers.
 
-### 📝 4. Custom Personal Notes & Context
-- Cho phép chỉnh sửa hoặc bổ sung câu ví dụ, ngữ cảnh sử dụng hoặc ghi chú nghĩa tiếng Việt của riêng bạn cho từng từ.
-- Cơ chế **Auto-save on Blur/Enter**: Tự động lưu ghi chú ngay khi bạn rời chuột hoặc bấm Enter, không sợ mất dữ liệu.
+### 📝 4. Contextual Notes & Custom Definitions
+- Add personal usage examples, mnemonics, or translations in the **Your notes** field for each saved word.
+- Built-in **Auto-Save on Blur / Enter**: Changes are automatically committed to local storage without requiring a manual save button.
 
-### 📥 5. Anki-Ready & Excel CSV Export
-- Xuất toàn bộ hoặc chỉ các từ được chọn ra file `.csv` có mã hóa **UTF-8 BOM**.
-- Tránh hoàn toàn lỗi vỡ font tiếng Việt/ký tự đặc biệt khi mở bằng **Microsoft Excel**.
-- Tương thích hoàn hảo với định dạng nhập thẻ của **Anki**, **Quizlet** và **Notion Database**.
+### 📥 5. Anki-Ready & Excel-Compatible CSV Export
+- Export all saved words (or only selected items) into a standardized `.csv` file.
+- Formatted with **UTF-8 BOM (Byte Order Mark)** to ensure clean rendering in Microsoft Excel without character corruption.
+- Structured specifically for seamless one-click importing into **Anki**, **Quizlet**, and **Notion Databases**.
 
 ### 📋 6. One-Click Copy All to Clipboard
-- Sao chép toàn bộ danh sách từ đã lưu thành văn bản được đánh số thứ tự kèm phiên âm, định nghĩa và ghi chú cá nhân để dán nhanh vào Word, Docs hoặc tin nhắn.
+- Copies your entire vocabulary list as a cleanly formatted, numbered text summary containing words, phonetics, definitions, and personal notes for quick pasting into study docs or messages.
 
-### 🔍 7. Real-Time Search & Bulk Operations
-- Tìm kiếm từ vựng theo thời gian thực (lọc theo từ gốc, định nghĩa hoặc ghi chú cá nhân).
-- Nút bấm tiện lợi: **Select All**, **Expand All**, **Collapse All**, và **Delete Selected** hàng loạt.
+### 🔍 7. Real-Time Fuzzy Search & Bulk Operations
+- Instant filtering across words, phonetics, definitions, and custom notes.
+- Convenient bulk control tools: **Select All**, **Expand All**, **Collapse All**, and **Delete Selected**.
 
 ---
 
-## 🏗️ Architecture & Tech Stack
+## 🏗️ Architecture & Technical Implementation
 
-LangSave được xây dựng theo chuẩn **Google Chrome Manifest V3**, cam kết tối đa hóa hiệu năng và tiết kiệm pin:
+LangSave is built strictly upon **Google Chrome Manifest V3**, ensuring maximum performance, minimal memory footprint, and enhanced security:
 
 ```mermaid
 flowchart TD
-    subgraph BROWSER_CONTENT["Web Page & PDF Viewer"]
+    subgraph BROWSER_CONTENT["Browser Content & PDF Viewer"]
         SELECT["User highlights word"]
         KEYS["Keyboard: Alt + S"]
         CTX["Context Menu: Save to LangSave"]
-        PDF_DOM["PDF.js TextLayer & DOM Traversal"]
+        PDF_DOM["PDF.js TextLayer and DOM Traversal"]
     end
 
-    subgraph BACKGROUND["Service Worker (background.js)"]
-        SW["Event Listeners<br/>(chrome.commands & chrome.contextMenus)"]
-        CLEAN["Word Sanitization & Duplicate Check"]
-        API_CALL["Fetch API Definition<br/>(api.dictionaryapi.dev)"]
-        NOTIF["Native Notifications"]
+    subgraph BACKGROUND["Service Worker - background.js"]
+        SW["Event Listeners - chrome.commands and contextMenus"]
+        CLEAN["Word Sanitization and Duplicate Check"]
+        API_CALL["Fetch Dictionary API - api.dictionaryapi.dev"]
+        NOTIF["Native Chrome Notifications"]
     end
 
     subgraph STORAGE["Chrome Local Storage"]
-        DB[("chrome.storage.local<br/>- words: Array of WordEntry<br/>- dateAdded, phonetic, autoDef, customDef")]
+        DB[("chrome.storage.local - Array of WordEntry")]
     end
 
-    subgraph POPUP["Popup UI (popup.js & styles.css)"]
+    subgraph POPUP["Popup Interface - popup.js and styles.css"]
         UI["Modern Inter Font Card Interface"]
-        SEARCH["Instant Fuzzy Search Filter"]
+        SEARCH["Instant Search Filter"]
         EXP["UTF-8 BOM CSV Exporter"]
         CLIP["Formatted Clipboard Generator"]
     end
@@ -125,102 +125,101 @@ flowchart TD
     POPUP --> CLIP
 ```
 
-### Chi tiết công nghệ:
-- **Manifest Version**: Manifest V3 (chuẩn mới nhất của Google Chrome, tối ưu hóa RAM và vòng đời tiến trình).
-- **Core Scripting**: Vanilla JavaScript (ES6+), Clean Architecture, không cần bundler cồng kềnh.
-- **Chrome APIs sử dụng**:
-  - `chrome.contextMenus`: Tích hợp menu chuột phải tiện lợi.
-  - `chrome.commands`: Lắng nghe phím tắt toàn cầu `Alt + S`.
-  - `chrome.storage.local`: Lưu trữ dữ liệu an toàn, bền bỉ ngay trên máy người dùng.
-  - `chrome.scripting`: Thực thi script trích xuất văn bản nâng cao trên các tab PDF.
-  - `chrome.notifications`: Gửi phản hồi thông báo tức thì khi lưu từ.
-- **External API**: [Free Dictionary API](https://dictionaryapi.dev/) (mã nguồn mở, không cần API Key).
+### Technical Highlights:
+- **Manifest V3 Compliant**: Uses an event-driven Service Worker (`background.js`) with zero persistent background memory consumption.
+- **Chrome Extension APIs**:
+  - `chrome.commands`: Global shortcut listener (`Alt + S`).
+  - `chrome.contextMenus`: Right-click contextual integration.
+  - `chrome.storage.local`: Fast, persistent, on-device key-value storage.
+  - `chrome.scripting`: Dynamic script execution for PDF canvas and DOM extraction.
+  - `chrome.notifications`: Non-intrusive feedback toasts.
+- **External Dependency**: Zero heavy build tools or npm dependencies; pure Vanilla JavaScript (ES6+) for ultra-lightweight distribution.
 
 ---
 
-## 🛠️ Installation Guide / Hướng Dẫn Cài Đặt
+## 🛠️ Installation Guide (Developer Mode)
 
-### Cài Đặt Dạng Developer Mode (Trải Nghiệm Ngay Trong 1 Phút)
+You can run LangSave locally in less than 60 seconds:
 
-1. **Tải mã nguồn về máy**:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/Charonart/LangSaveExtension.git
    ```
-2. **Mở trang quản lý tiện ích trên trình duyệt**:
-   - Truy cập vào đường dẫn: **`chrome://extensions/`** (hoặc `edge://extensions/` trên Microsoft Edge).
-3. **Bật chế độ nhà phát triển**:
-   - Gạt công tắc **Developer mode** (Chế độ dành cho nhà phát triển) ở góc trên bên phải sang **ON**.
-4. **Tải tiện ích vào trình duyệt**:
-   - Nhấn vào nút **Load unpacked** (Tải tiện ích đã giải nén).
-   - Chọn thư mục `LangSave` trên máy tính của bạn.
-5. **Ghim tiện ích**:
-   - Nhấn vào biểu tượng mảnh ghép (Extensions) trên thanh công cụ của Chrome và bấm **Ghim (Pin)** LangSave để dễ dàng mở popup!
+2. **Open Extensions settings in Chrome**:
+   - Navigate to: **`chrome://extensions/`** (or `edge://extensions/` in Microsoft Edge).
+3. **Enable Developer Mode**:
+   - Toggle the **Developer mode** switch in the top-right corner to **ON**.
+4. **Load the Extension**:
+   - Click the **Load unpacked** button.
+   - Select the `LangSave` project directory on your computer.
+5. **Pin the Extension**:
+   - Click the puzzle piece icon on your browser toolbar and click the **Pin** icon next to LangSave for quick access!
 
 ---
 
-## 📖 How to Use / Hướng Dẫn Sử Dụng
+## 📖 How to Use
 
-| Thao Tác | Phím Tắt / Hành Động | Kết Quả |
+| Action | Trigger / Shortcut | Outcome |
 | :--- | :--- | :--- |
-| **Lưu từ nhanh** | Bôi đen từ $\rightarrow$ Bấm **`Alt + S`** | Lưu từ, tự động tra phiên âm, định nghĩa và hiện thông báo góc màn hình |
-| **Lưu qua chuột phải** | Bôi đen từ $\rightarrow$ Chuột phải $\rightarrow$ Chọn **"Save to LangSave"** | Lưu từ và cập nhật danh sách |
-| **Thêm ghi chú riêng** | Mở popup $\rightarrow$ Bấm vào ô **Your notes** | Tự động lưu ghi chú khi gõ xong hoặc bấm Enter |
-| **Tìm kiếm từ** | Nhập từ khóa vào thanh search | Lọc từ tức thì theo từ vựng, phiên âm hoặc ghi chú |
-| **Xuất ra Anki/Excel** | Chọn các từ (hoặc bấm Select All) $\rightarrow$ Bấm **Export Selected** | Tải xuống file `.csv` chuẩn UTF-8 BOM |
+| **Instant Save** | Highlight word $\rightarrow$ Press **`Alt + S`** | Saves word, fetches phonetics & definition, shows notification |
+| **Context Menu Save** | Highlight word $\rightarrow$ Right-click $\rightarrow$ **"Save to LangSave"** | Saves word and updates popup list |
+| **Add Notes / Examples**| Open popup $\rightarrow$ Type in **Your notes** | Auto-saved on blur or when pressing Enter |
+| **Instant Search** | Type query into search bar | Filters list in real-time by word, phonetic, or custom notes |
+| **Export to Anki** | Select items (or **Select All**) $\rightarrow$ Click **Export Selected** | Downloads `.csv` file ready for Anki flashcard import |
 
-> 💡 **Mẹo đổi phím tắt**: Nếu bạn muốn đổi `Alt + S` sang phím khác (ví dụ: `Ctrl + Shift + S`), bạn chỉ cần truy cập: **`chrome://extensions/shortcuts`** và thiết lập phím tắt mong muốn cho LangSave.
-
----
-
-## 🎴 Exporting to Anki / Hướng Dẫn Xuất Thẻ Anki
-
-File CSV của LangSave được thiết kế tương thích 100% với ứng dụng học từ vựng **Anki**:
-
-1. Mở popup LangSave, nhấn **Select All** (hoặc tích chọn các từ bạn muốn học) rồi nhấn **`Export Selected`**.
-2. Mở ứng dụng **Anki** trên máy tính của bạn.
-3. Chọn menu **File** $\rightarrow$ **Import...** $\rightarrow$ Chọn file CSV vừa tải về từ LangSave.
-4. Thiết lập ánh xạ các trường (Field Mapping) trong Anki:
-   - **Field 1 (Word)** $\rightarrow$ Mặt trước (Front)
-   - **Field 2 (Phonetic)** $\rightarrow$ Phiên âm IPA
-   - **Field 3 (Auto-Definition)** $\rightarrow$ Mặt sau / Định nghĩa (Back / Meaning)
-   - **Field 4 (Custom-Definition)** $\rightarrow$ Ghi chú / Ví dụ cá nhân (Notes / Example)
-5. Nhấn **Import** — Toàn bộ từ vựng mới đã sẵn sàng cho bạn ôn luyện mỗi ngày!
+> 💡 **Customizing Shortcuts**: If you wish to change `Alt + S` to another shortcut (such as `Ctrl + Shift + S`), visit: **`chrome://extensions/shortcuts`** in your browser.
 
 ---
 
-## 🔒 Privacy & Permissions / Quyền Riêng Tư & Bảo Mật
+## 🎴 Exporting to Anki Flashcards
 
-LangSave tôn trọng tuyệt đối quyền riêng tư của bạn:
+LangSave CSV files are structured for direct import into [Anki Desktop](https://apps.ankiweb.net/):
 
-- 🛡️ **100% Local Storage**: Tất cả từ vựng bạn lưu trữ đều nằm trong `chrome.storage.local` trên chính thiết bị của bạn.
-- 🚫 **No Tracking / No Analytics**: Tiện ích không thu thập dữ liệu hành vi, không gắn mã theo dõi của bên thứ ba.
-- 🔑 **No Sign-Up Required**: Cài đặt là dùng ngay, không yêu cầu tạo tài khoản hay cung cấp email.
-- 🌐 **Network Usage**: Tiện ích chỉ gửi duy nhất một yêu cầu HTTP GET đến `api.dictionaryapi.dev` khi bạn chủ động lưu từ để lấy thông tin giải nghĩa từ điển.
+1. In the LangSave popup, select the words you want to study and click **`Export Selected`**.
+2. Open **Anki** on your computer.
+3. Click **File** $\rightarrow$ **Import...** $\rightarrow$ Select your downloaded CSV file.
+4. Set the field mapping in Anki:
+   - **Field 1 (`Word`)** $\rightarrow$ Front / Word
+   - **Field 2 (`Phonetic`)** $\rightarrow$ IPA Pronunciation
+   - **Field 3 (`Auto-Definition`)** $\rightarrow$ Back / Meaning
+   - **Field 4 (`Custom-Definition`)** $\rightarrow$ Personal Notes & Examples
+5. Click **Import**. Your custom flashcard deck is ready for daily spaced repetition!
 
 ---
 
-## 🗺️ Roadmap / Lộ Trình Phát Triển
+## 🔒 Privacy & Security
+
+LangSave is built with a strict **Privacy-First** philosophy:
+
+- 🛡️ **100% Local Storage**: All saved vocabulary and notes remain exclusively inside your browser's local sandbox (`chrome.storage.local`).
+- 🚫 **No Tracking / Zero Telemetry**: No analytics scripts, no advertising trackers, and no third-party telemetry.
+- 🔑 **No Account Required**: Ready to use immediately without registering or providing an email address.
+- 🌐 **Minimal Network Footprint**: The only network request occurs when querying `api.dictionaryapi.dev` to fetch dictionary data for words you explicitly choose to save.
+
+---
+
+## 🗺️ Roadmap
 
 - [x] Manifest V3 Architecture & Service Worker Lifecycle
-- [x] Phím tắt `Alt + S` & Context Menu
-- [x] Hỗ trợ trích xuất text trong Chrome PDF Viewer
-- [x] Tự động tra nghĩa & phiên âm qua Dictionary API
-- [x] Xuất file CSV chuẩn UTF-8 BOM cho Anki/Excel
-- [ ] 🔊 **Audio TTS Pronunciation**: Phát âm giọng bản xứ trực tiếp trong popup
-- [ ] 🔄 **Direct AnkiConnect Integration**: Đồng bộ 1 chạm trực tiếp vào Anki Desktop không cần tải file CSV
-- [ ] 🌐 **Multi-Language Support**: Bổ sung từ điển dịch tự động Anh - Việt (Google Translate / DeepL integration)
-- [ ] ☁️ **Cloud Sync Option**: Tùy chọn đồng bộ Google Drive hoặc Notion cá nhân
+- [x] Global Keyboard Shortcut (`Alt + S`) & Context Menu Integration
+- [x] Native Chrome PDF Viewer Text Extraction
+- [x] Automated IPA Phonetics & Lexical Definitions
+- [x] Anki-compatible UTF-8 BOM CSV Exporter
+- [ ] 🔊 **Audio TTS Pronunciation**: Native audio playback of pronunciation within popup
+- [ ] 🔄 **Direct AnkiConnect Integration**: 1-click sync directly into Anki Desktop via local API
+- [ ] 🌐 **Multi-Language Support**: Bilingual translation options (Google Translate / DeepL integration)
+- [ ] ☁️ **Cloud Backup**: Optional synchronization with Google Drive or Notion
 
 ---
 
-## 👨‍💻 Author & Links / Tác Giả & Liên Hệ
+## 👨‍💻 Author & Contact
 
-- **Project Lead & Developer**: **Lê Bá Quý** ([Charonart](https://github.com/Charonart) / Lê Quý)
+- **Lead Developer**: **Lê Bá Quý** ([Charonart](https://github.com/Charonart) / Lê Quý)
 - **Repository**: [https://github.com/Charonart/LangSaveExtension](https://github.com/Charonart/LangSaveExtension)
-- **Report Bugs & Feedback**: [GitHub Issues](https://github.com/Charonart/LangSaveExtension/issues)
+- **Issue Tracker**: [GitHub Issues](https://github.com/Charonart/LangSaveExtension/issues)
 
 ---
 
 <p align="center">
-  <i>Developed with precision for language learners, readers, and knowledge seekers.</i>
+  <i>LangSave — Designed for readers, language learners, and curious minds.</i>
 </p>
